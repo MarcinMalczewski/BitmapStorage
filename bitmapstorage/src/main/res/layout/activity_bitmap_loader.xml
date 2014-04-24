@@ -1,0 +1,146 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pl.twogeeks.bitmapstorage.sample.BitmapLoaderActivity">
+
+    <TextView
+        android:text="Original image size (W x H): "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/defaultSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textSize="11sp"/>
+
+    <EditText
+        android:id="@+id/reqWidth"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/defaultSize"
+        android:layout_toRightOf="@+id/reqSize"
+        android:maxLength="4"
+        android:textSize="10sp"/>
+
+    <TextView
+        android:id="@+id/sepX"
+        android:text="x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/defaultSize"
+        android:layout_alignBaseline="@id/reqWidth"
+        android:layout_toRightOf="@+id/reqWidth"
+        android:textSize="11sp"/>
+
+    <EditText
+        android:id="@+id/reqHeight"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/defaultSize"
+        android:layout_toRightOf="@+id/sepX"
+        android:maxLength="4"
+        android:textSize="10sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="change"
+        android:id="@+id/changeSize"
+        android:layout_toRightOf="@+id/reqHeight"
+        android:layout_below="@id/defaultSize"
+        android:textSize="11sp"/>
+
+    <TextView
+        android:id="@+id/reqSize"
+        android:text="Requested size (W x H):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/defaultSize"
+        android:layout_alignBaseline="@id/reqWidth"
+        android:textSize="10sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="default"
+        android:id="@+id/defaultImage"
+        android:layout_toRightOf="@+id/source"
+        android:layout_below="@id/changeSize"
+        android:textSize="11sp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="gallery"
+        android:id="@+id/gallery"
+        android:layout_toRightOf="@id/defaultImage"
+        android:layout_below="@id/changeSize"
+        android:textSize="11sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Image file:"
+        android:id="@+id/source"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/reqSize"
+        android:layout_alignBaseline="@id/defaultImage"
+        android:textSize="11sp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gallery">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="SCALE_TYPE_NOT_SMALLER" />
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#666666"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image size:"
+                android:id="@+id/size1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="SCALE_TYPE_SMALLER" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#666666"
+                android:scaleType="centerInside"
+                android:adjustViewBounds="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image size:"
+                android:id="@+id/size2" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
